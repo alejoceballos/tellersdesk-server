@@ -2,6 +2,16 @@
 
 
 
+;define('tellersdesk-front/adapters/application', ['exports', 'ember-data'], function (exports, _emberData) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _emberData.default.RESTAdapter.extend({
+        namespace: 'api'
+    });
+});
 ;define('tellersdesk-front/app', ['exports', 'tellersdesk-front/resolver', 'ember-load-initializers', 'tellersdesk-front/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
     'use strict';
 
@@ -19,6 +29,22 @@
     (0, _emberLoadInitializers.default)(App, _environment.default.modulePrefix);
 
     exports.default = App;
+});
+;define('tellersdesk-front/components/characters-list/component', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Component.extend({});
+});
+;define("tellersdesk-front/components/characters-list/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "rVDpmnws", "block": "{\"symbols\":[\"item\"],\"statements\":[[7,\"table\"],[9],[0,\"\\n    \"],[7,\"thead\"],[9],[0,\"\\n    \"],[7,\"tr\"],[9],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Name\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Strength\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Dexterity\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Stamina\"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"data\"]]],null,{\"statements\":[[0,\"        \"],[7,\"tr\"],[9],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"name\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"strength\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"dexterity\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"stamina\"]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters-list/template.hbs" } });
 });
 ;define('tellersdesk-front/components/welcome-page', ['exports', 'ember-welcome-page/components/welcome-page'], function (exports, _welcomePage) {
   'use strict';
@@ -193,6 +219,21 @@
     initialize: _initializeStoreService.default
   };
 });
+;define('tellersdesk-front/models/character', ['exports', 'ember-data'], function (exports, _emberData) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _emberData.default.Model.extend({
+
+        name: _emberData.default.attr('string'),
+        strength: _emberData.default.attr('number', { defaultValue: 1 }),
+        dexterity: _emberData.default.attr('number', { defaultValue: 1 }),
+        stamina: _emberData.default.attr('number', { defaultValue: 1 })
+
+    });
+});
 ;define('tellersdesk-front/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   'use strict';
 
@@ -229,35 +270,9 @@
     });
     exports.default = Ember.Route.extend({
         model() {
-            return [{
-                name: 'Dominic Doonshield',
-                attributes: {
-                    physical: {
-                        strength: 3,
-                        dexterity: 3,
-                        stamina: 4
-                    }
-                }
-            }, {
-                name: 'Lys Ming Nielle',
-                attributes: {
-                    physical: {
-                        strength: 2,
-                        dexterity: 5,
-                        stamina: 3
-                    }
-                }
-            }];
+            return this.store.findAll('character');
         }
     });
-});
-;define('tellersdesk-front/routes/stories', ['exports'], function (exports) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = Ember.Route.extend({});
 });
 ;define('tellersdesk-front/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _ajax) {
   'use strict';
@@ -286,15 +301,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "KGNmVCz6", "block": "{\"symbols\":[\"character\"],\"statements\":[[7,\"table\"],[9],[0,\"\\n    \"],[7,\"thead\"],[9],[0,\"\\n    \"],[7,\"tr\"],[9],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Name\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Strength\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Dexterity\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Stamina\"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"model\"]]],null,{\"statements\":[[0,\"        \"],[7,\"tr\"],[9],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"name\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"attributes\",\"physical\",\"strength\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"attributes\",\"physical\",\"dexterity\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"attributes\",\"physical\",\"stamina\"]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/characters.hbs" } });
-});
-;define("tellersdesk-front/templates/stories", ["exports"], function (exports) {
-  "use strict";
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = Ember.HTMLBars.template({ "id": "3bHtgfrJ", "block": "{\"symbols\":[],\"statements\":[[1,[21,\"outlet\"],false]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/stories.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "8tBKBbeh", "block": "{\"symbols\":[],\"statements\":[[1,[27,\"characters-list\",null,[[\"data\"],[[23,[\"model\"]]]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/characters.hbs" } });
 });
 ;
 
@@ -319,7 +326,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+7d15ad96"});
+            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+a2ec444f"});
           }
         
 //# sourceMappingURL=tellersdesk-front.map
