@@ -8,7 +8,7 @@
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.default = _emberData.default.RESTAdapter.extend({
+    exports.default = _emberData.default.JSONAPIAdapter.extend({
         namespace: 'api'
     });
 });
@@ -326,7 +326,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+a2ec444f"});
+            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+7b2d1d8f"});
           }
         
 //# sourceMappingURL=tellersdesk-front.map
