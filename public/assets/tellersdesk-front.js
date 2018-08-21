@@ -326,7 +326,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+7b2d1d8f"});
+            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+487f9ae3"});
           }
         
 //# sourceMappingURL=tellersdesk-front.map
