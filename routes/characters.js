@@ -1,5 +1,6 @@
 const express = require('express'),
     router = express.Router(),
+    service = require('../models/character/CharacterService'),
     JSONAPISerializer = require('jsonapi-serializer').Serializer,
 
     jsonApiType = 'characters',
@@ -9,22 +10,7 @@ const express = require('express'),
 
 /* GET characters listing. */
 router.get('/', function (req, res /*, next*/) {
-    const rawData = [
-            {
-                id: 1,
-                name: 'Dominic Doonshield',
-                strength: 3,
-                dexterity: 3,
-                stamina: 4
-            },
-            {
-                id: 2,
-                name: 'Lys Ming Nielle',
-                strength: 2,
-                dexterity: 5,
-                stamina: 3
-            }
-        ],
+    const rawData = service.findAll(),
         serializedData = jsonApiSerializer.serialize(rawData);
 
     res.send(serializedData);
