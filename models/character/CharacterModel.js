@@ -1,32 +1,19 @@
 class Character {
 
-    static builder(id) {
-        return new CharacterBuilder(new Character(), id);
-    }
-}
-
-class CharacterBuilder {
-    constructor(instance, id) {
-        this.instance = instance;
-        this.instance.id = id;
+    constructor(id) {
+        this.id = id;
     }
 
-    withName(name) {
-        this.instance.name = name;
-
+    setName(name) {
+        this.name = name;
         return this;
     }
 
-    withPhysicalAttributes(strength, dexterity, stamina) {
-        this.instance.strength = strength;
-        this.instance.dexterity = dexterity;
-        this.instance.stamina = stamina;
-
+    setPhysicalAttributes(strength, dexterity, stamina) {
+        this.strength = strength;
+        this.dexterity = dexterity;
+        this.stamina = stamina;
         return this;
-    }
-
-    build() {
-        return this.instance;
     }
 }
 
