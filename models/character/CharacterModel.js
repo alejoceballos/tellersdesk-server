@@ -1,22 +1,13 @@
 class Character {
 
-    constructor(id) {
-        this.id = id;
+    constructor(values) {
+        Object.assign(this, values);
     }
 
-    setName(name) {
-        this.name = name;
-        return this;
+    static newInstance(values) {
+        return new Character(values);
     }
 
-    setPhysicalAttributes(strength, dexterity, stamina) {
-        this.strength = strength;
-        this.dexterity = dexterity;
-        this.stamina = stamina;
-        return this;
-    }
 }
 
-module.exports = {
-    Character: Character
-};
+module.exports = Character;

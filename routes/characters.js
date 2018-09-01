@@ -1,19 +1,24 @@
 const express = require('express'),
     router = express.Router(),
     service = require('../models/character/CharacterService'),
-    JSONAPISerializer = require('jsonapi-serializer').Serializer,
+    Character = require('../models/character/CharacterModel'),
+    { serializer, deserializer } = require('../models/character/Serializer');
 
-    jsonApiType = 'characters',
-    jsonApiOptions = { attributes: ['name', 'strength', 'dexterity', 'stamina'] },
-    jsonApiSerializer = new JSONAPISerializer(jsonApiType, jsonApiOptions);
+const deserialize = data => deserializer.deserialize(data),
+    newInstance = (type, data) => type.newInstance(data),
+    persist = instance => service.persist(instance),
+    serialize = data => serializer.serialize(data);
 
 
-/* GET characters listing. */
+/* GET characters listing */
 router.get('/', function (req, res /*, next*/) {
-    const rawData = service.findAll(),
-        serializedData = jsonApiSerializer.serialize(rawData);
+    res.send(serialize(service.findAll()));
+});
 
-    res.send(serializedData);
+/* POST new character */
+router.post('/', async function (req, res /*, next*/) {
+    const data = await deserialize(req.body);
+    res.send(serialize(persist(newInstance(Character, data))));
 });
 
 module.exports = router;

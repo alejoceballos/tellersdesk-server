@@ -1,8 +1,8 @@
 const uuid = require('uuid/v4'),
-    Character = require('./CharacterModel').Character,
+    Character = require('./CharacterModel'),
     data = [
-        new Character(uuid()).setName('Dominic Doonshield').setPhysicalAttributes(3, 3, 4),
-        new Character(uuid()).setName('Lys Aming Nielle').setPhysicalAttributes(2, 5, 3)
+        Character.newInstance({id: uuid(), name: 'Dominic Doonshield', strength: 3, dexterity: 3, stamina: 4}),
+        Character.newInstance({id: uuid(), name: 'Lys Aming Nielle', strength: 2, dexterity: 5, stamina: 3})
     ];
 
 module.exports = {
@@ -17,18 +17,14 @@ module.exports = {
         let toPersist;
 
         if (character.id) {
-            toPersist = data.find(element => element.id === character.id);
-            if (!toPersist) throw new Error('Cannot update. Provided id not found');
+            const idx = data.findIndex(element => element.id === character.id);
+            if (idx < 0) throw new Error('Cannot update. Provided id not found');
+
+            data[idx] = toPersist = Object.assign(Character.newInstance(), character);
         } else {
-            toPersist = new Character(uuid());
+            data.push(toPersist = Object.assign(Character.newInstance({ id: uuid() }), character));
         }
 
-        return toPersist
-            .setName(character.name)
-            .setPhysicalAttributes(
-                character.strength,
-                character.dexterity,
-                character.stamina
-            );
+        return toPersist;
     }
 };
