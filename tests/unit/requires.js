@@ -1,6 +1,8 @@
 module.exports = {
-    app:       require('../../app'),
-    Character: require('../../models/character/CharacterModel'),
-    CharacterSerializer: require('../../models/character/Serializer').serializer,
-    CharacterDeserializer: require('../../models/character/Serializer').deserializer
+    app: require('../../app'),
+    character: {
+        newInstance: require('../../models/character/character-model').newInstance,
+        serializer: require('../../models/character/character-serializer').serializer,
+        deserializer: require('../../models/character/character-serializer').deserializer
+    }
 };
