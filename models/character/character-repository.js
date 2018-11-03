@@ -6,10 +6,19 @@ const uuid = require('uuid/v4'),
     ];
 
 module.exports = {
+    /**
+     *
+     * @returns {Character[]}
+     */
     findAll: function () {
         return data;
     },
 
+    /**
+     *
+     * @param character
+     * @returns {Character | Character | {id}}
+     */
     persist: function (character) {
         if (!character) throw new Error('No instance to persist');
         if (!(character instanceof Character)) throw new Error('Wrong type of model to persist');

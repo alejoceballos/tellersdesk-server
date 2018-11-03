@@ -2,7 +2,7 @@ const describe = require('mocha').describe,
     assert = require('assert'),
     character = require('../requires').character;
 
-describe('MODEL', () => {
+describe('MODEL: Character', () => {
     describe('New Instance', () => {
         it('With default values', () => {
             const data = {id: 1, name: 'name', strength: 1, dexterity: 2, stamina: 3},
