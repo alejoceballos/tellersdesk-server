@@ -31,12 +31,66 @@
     exports.default = App;
 });
 ;define('tellersdesk-front/components/characters/character-list/component', ['exports'], function (exports) {
-  'use strict';
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Component.extend({
+
+        tagName: 'table',
+
+        characters: Ember.A(),
+
+        onItemView: null,
+
+        onItemUpdate: null,
+
+        actions: {
+            itemView(character) {
+                this.onItemView(character);
+            },
+
+            itemUpdate(character) {
+                this.onItemUpdate(character);
+            }
+        }
+
+    });
+});
+;define('tellersdesk-front/components/characters/character-list/list-item/component', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Component.extend({
+        tagName: 'tr',
+
+        character: null,
+
+        onView: null,
+
+        onUpdate: null,
+
+        actions: {
+            view(character) {
+                this.onView(character);
+            },
+
+            update(character) {
+                this.onUpdate(character);
+            }
+        }
+    });
+});
+;define("tellersdesk-front/components/characters/character-list/list-item/template", ["exports"], function (exports) {
+  "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.Component.extend({});
+  exports.default = Ember.HTMLBars.template({ "id": "NAj0gQq0", "block": "{\"symbols\":[],\"statements\":[[7,\"td\"],[9],[1,[23,[\"character\",\"name\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"strength\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"dexterity\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"stamina\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"view\",[23,[\"character\"]]]],[9],[0,\"View\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"update\",[23,[\"character\"]]]],[9],[0,\"Update\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/list-item/template.hbs" } });
 });
 ;define("tellersdesk-front/components/characters/character-list/template", ["exports"], function (exports) {
   "use strict";
@@ -44,7 +98,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "jo1i+boJ", "block": "{\"symbols\":[\"item\"],\"statements\":[[7,\"table\"],[9],[0,\"\\n    \"],[7,\"thead\"],[9],[0,\"\\n    \"],[7,\"tr\"],[9],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Name\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Strength\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Dexterity\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Stamina\"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"data\"]]],null,{\"statements\":[[0,\"        \"],[7,\"tr\"],[9],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"name\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"strength\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"dexterity\"]],false],[10],[0,\"\\n            \"],[7,\"td\"],[9],[1,[22,1,[\"stamina\"]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "YXjwInl2", "block": "{\"symbols\":[\"character\"],\"statements\":[[7,\"thead\"],[9],[0,\"\\n\"],[7,\"tr\"],[9],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Name\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Strength\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Dexterity\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Stamina\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"characters\"]]],null,{\"statements\":[[0,\"        \"],[1,[27,\"characters/character-list/list-item\",null,[[\"character\",\"onView\",\"onUpdate\"],[[22,1,[]],[27,\"action\",[[22,0,[]],\"itemView\"],null],[27,\"action\",[[22,0,[]],\"itemUpdate\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/template.hbs" } });
 });
 ;define('tellersdesk-front/components/characters/characters-edit/component', ['exports'], function (exports) {
     'use strict';
@@ -63,20 +117,23 @@
          * @property
          * @public
          */
-        maxAttributeValues: null,
+        attributesMaxValues: null,
 
         /**
          * @property
          * @public
          */
-        saveAction: null,
+        onSave: null,
 
         /**
          * @property
          * @public
          */
-        cancelAction: null,
+        onCancel: null,
 
+        /**
+         * @inheritDoc
+         */
         init() {
             this._super(...arguments);
 
@@ -84,18 +141,60 @@
                 throw new Error('A character model must be provided');
             }
 
-            if (!this.get('maxAttributeValues')) {
-                this.set('maxAttributeValues', [7, 5, 3]);
+            if (!this.get('attributesMaxValues')) {
+                this.set('attributesMaxValues', [7, 5, 3]);
             }
         },
 
+        validate() {
+            if (this.get('character.isNew')) {
+                this.validateNew();
+            } else {
+                this.validateExisting();
+            }
+        },
+
+        validateNew() {
+            const maxAllowed = this.get('attributesMaxValues').reduce((acc, val) => acc + val);
+
+            if (this.get('character.attributesTotal') < maxAllowed) {
+                throw new Error('Not all attribute points were used');
+            }
+
+            if (this.get('character.attributesTotal') > maxAllowed) {
+                throw new Error('Maximum number of allowed attribute points were reached');
+            }
+
+            const attrMaxVals = this.get('attributesMaxValues').map(val => val);
+
+            const strengthMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.strength')));
+            if (strengthMaxIdx < 0) {
+                throw new Error('Strength points not distributed accordingly');
+            }
+            delete attrMaxVals[strengthMaxIdx];
+
+            const dexterityMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.dexterity')));
+            if (dexterityMaxIdx < 0) {
+                throw new Error('Dexterity points not distributed accordingly');
+            }
+            delete attrMaxVals[dexterityMaxIdx];
+
+            const staminaMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.stamina')));
+            if (staminaMaxIdx < 0) {
+                throw new Error('Stamina points not distributed accordingly');
+            }
+        },
+
+        validateExisting() {},
+
         actions: {
-            save() {
-                this.sendAction('saveAction', this.get('character'));
+            save(character) {
+                this.validate();
+                this.onSave(character);
             },
 
             cancel() {
-                this.sendAction('cancelAction', this.get('character'));
+                this.onCancel('cancelAction', this.get('character'));
             }
         }
     });
@@ -106,7 +205,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "DZ4w7HVC", "block": "{\"symbols\":[\"&default\"],\"statements\":[[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Name:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"name\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Strength:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"strength\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Dexterity:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"dexterity\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Stamina:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"stamina\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"bubb\"]]]],[9],[0,\"Save\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"cancel\"]],[9],[0,\"Cancel\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[14,1],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/characters-edit/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "7Gs3crxQ", "block": "{\"symbols\":[\"&default\"],\"statements\":[[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Name:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"name\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Strength:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"strength\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Dexterity:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"dexterity\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Stamina:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"stamina\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"character\"]]]],[9],[0,\"Save\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"cancel\",[23,[\"character\"]]]],[9],[0,\"Cancel\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[14,1],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/characters-edit/template.hbs" } });
 });
 ;define('tellersdesk-front/components/welcome-page', ['exports', 'ember-welcome-page/components/welcome-page'], function (exports, _welcomePage) {
   'use strict';
@@ -120,6 +219,44 @@
       return _welcomePage.default;
     }
   });
+});
+;define('tellersdesk-front/controllers/characters/create', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Controller.extend({
+        actions: {
+            save(character) {
+                character.save();
+            },
+
+            cancel(character) {
+                character.deleteRecord();
+            }
+        }
+    });
+});
+;define('tellersdesk-front/controllers/characters/list', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Controller.extend({
+
+        actions: {
+            goToView(character) {
+                this.transitionToRoute('characters.view', character.id);
+            },
+
+            goToUpdate(character) {
+                this.transitionToRoute('characters.update', character.id);
+            }
+        }
+
+    });
 });
 ;define('tellersdesk-front/helpers/app-version', ['exports', 'tellersdesk-front/config/environment', 'ember-cli-app-version/utils/regexp'], function (exports, _environment, _regexp) {
   'use strict';
@@ -291,7 +428,11 @@
         name: _emberData.default.attr('string'),
         strength: _emberData.default.attr('number', { defaultValue: 1 }),
         dexterity: _emberData.default.attr('number', { defaultValue: 1 }),
-        stamina: _emberData.default.attr('number', { defaultValue: 1 })
+        stamina: _emberData.default.attr('number', { defaultValue: 1 }),
+
+        attributesTotal: Ember.computed('strength', 'dexterity', 'stamina', function () {
+            return parseInt(this.get('strength')) + parseInt(this.get('dexterity')) + parseInt(this.get('stamina'));
+        })
     });
 });
 ;define('tellersdesk-front/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
@@ -364,16 +505,6 @@
 
         model() {
             return this.store.createRecord('character');
-        },
-
-        actions: {
-            saveNew(character) {
-                character.save();
-            },
-
-            cancelCreation(character) {
-                character.deleteRecord();
-            }
         }
     });
 });
@@ -394,12 +525,18 @@
     });
 });
 ;define('tellersdesk-front/routes/characters/update', ['exports'], function (exports) {
-  'use strict';
+    'use strict';
 
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = Ember.Route.extend({});
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Route.extend({
+
+        model(id) {
+            return this.store.findRecord('post', id);
+        }
+
+    });
 });
 ;define('tellersdesk-front/routes/dashboards', ['exports'], function (exports) {
     'use strict';
@@ -460,7 +597,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "m0YT3tmG", "block": "{\"symbols\":[],\"statements\":[[7,\"h1\"],[9],[0,\"Create\"],[10],[0,\"\\n\"],[1,[27,\"characters/characters-edit\",null,[[\"character\",\"saveAction\",\"cancelAction\"],[[23,[\"model\"]],\"saveNew\",\"cancelCreation\"]]],false],[0,\"\\n\"],[1,[21,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/characters/create.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "hngdjWTp", "block": "{\"symbols\":[],\"statements\":[[7,\"h1\"],[9],[0,\"Create\"],[10],[0,\"\\n\"],[1,[27,\"characters/characters-edit\",null,[[\"character\",\"onSave\",\"onCancel\"],[[23,[\"model\"]],[27,\"action\",[[22,0,[]],\"save\"],null],[27,\"action\",[[22,0,[]],\"cancel\"],null]]]],false],[0,\"\\n\"],[1,[21,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/characters/create.hbs" } });
 });
 ;define("tellersdesk-front/templates/characters/list", ["exports"], function (exports) {
   "use strict";
@@ -468,7 +605,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "knJkOeEV", "block": "{\"symbols\":[],\"statements\":[[7,\"h1\"],[9],[0,\"List\"],[10],[0,\"\\n\"],[1,[27,\"characters/character-list\",null,[[\"data\"],[[23,[\"model\"]]]]],false],[0,\"\\n\"],[1,[21,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/characters/list.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "cQOvetPr", "block": "{\"symbols\":[],\"statements\":[[7,\"h1\"],[9],[0,\"List\"],[10],[0,\"\\n\"],[1,[27,\"characters/character-list\",null,[[\"characters\",\"onItemView\",\"onItemUpdate\"],[[23,[\"model\"]],[27,\"action\",[[22,0,[]],\"goToView\"],null],[27,\"action\",[[22,0,[]],\"goToUpdate\"],null]]]],false],[0,\"\\n\"],[1,[21,\"outlet\"],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/characters/list.hbs" } });
 });
 ;define("tellersdesk-front/templates/characters/update", ["exports"], function (exports) {
   "use strict";
@@ -509,7 +646,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+eb3db519"});
+            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+25e1a1e2"});
           }
         
 //# sourceMappingURL=tellersdesk-front.map

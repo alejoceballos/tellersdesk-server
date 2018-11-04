@@ -4502,9 +4502,24 @@ define('tellersdesk-front/tests/lint/app.lint-test', [], function () {
     assert.ok(true, 'components/characters/character-list/component.js should pass ESLint\n\n');
   });
 
+  QUnit.test('components/characters/character-list/list-item/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/characters/character-list/list-item/component.js should pass ESLint\n\n');
+  });
+
   QUnit.test('components/characters/characters-edit/component.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/characters/characters-edit/component.js should pass ESLint\n\n42:13 - Use closure actions, unless you need bubbling (ember/closure-actions)\n46:13 - Use closure actions, unless you need bubbling (ember/closure-actions)');
+    assert.ok(true, 'components/characters/characters-edit/component.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/characters/create.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/characters/create.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/characters/list.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/characters/list.js should pass ESLint\n\n');
   });
 
   QUnit.test('models/character.js', function (assert) {
@@ -4587,6 +4602,16 @@ define('tellersdesk-front/tests/lint/tests.lint-test', [], function () {
     assert.ok(true, 'unit/adapters/application-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('unit/controllers/characters/create-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/controllers/characters/create-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/controllers/characters/list-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/controllers/characters/list-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('unit/models/character-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/models/character-test.js should pass ESLint\n\n');
@@ -4661,6 +4686,32 @@ define('tellersdesk-front/tests/unit/adapters/application-test', ['qunit', 'embe
         (0, _qunit.test)('it exists', function (assert) {
             let adapter = this.owner.lookup('adapter:application');
             assert.ok(adapter);
+        });
+    });
+});
+define('tellersdesk-front/tests/unit/controllers/characters/create-test', ['qunit', 'ember-qunit'], function (_qunit, _emberQunit) {
+    'use strict';
+
+    (0, _qunit.module)('Unit | Controller | characters/create', function (hooks) {
+        (0, _emberQunit.setupTest)(hooks);
+
+        // Replace this with your real tests.
+        (0, _qunit.test)('it exists', function (assert) {
+            let controller = this.owner.lookup('controller:characters/create');
+            assert.ok(controller);
+        });
+    });
+});
+define('tellersdesk-front/tests/unit/controllers/characters/list-test', ['qunit', 'ember-qunit'], function (_qunit, _emberQunit) {
+    'use strict';
+
+    (0, _qunit.module)('Unit | Controller | characters/list', function (hooks) {
+        (0, _emberQunit.setupTest)(hooks);
+
+        // Replace this with your real tests.
+        (0, _qunit.test)('it exists', function (assert) {
+            let controller = this.owner.lookup('controller:characters/list');
+            assert.ok(controller);
         });
     });
 });
