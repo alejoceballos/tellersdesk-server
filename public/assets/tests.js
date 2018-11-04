@@ -4482,6 +4482,35 @@ define('tellersdesk-front/tests/integration/components/characters/character-list
         });
     });
 });
+define('tellersdesk-front/tests/integration/components/characters/character-view-test', ['qunit', 'ember-qunit', '@ember/test-helpers'], function (_qunit, _emberQunit, _testHelpers) {
+    'use strict';
+
+    (0, _qunit.module)('Integration | Component | characters/character-view', function (hooks) {
+        (0, _emberQunit.setupRenderingTest)(hooks);
+
+        (0, _qunit.test)('it renders', async function (assert) {
+            // Set any properties with this.set('myProperty', 'value');
+            // Handle any actions with this.set('myAction', function(val) { ... });
+
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "DQKopXPI",
+                "block": "{\"symbols\":[],\"statements\":[[1,[21,\"characters/character-view\"],false]],\"hasEval\":false}",
+                "meta": {}
+            }));
+
+            assert.equal(this.element.textContent.trim(), '');
+
+            // Template block usage:
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "KZN8bGwu",
+                "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"characters/character-view\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
+                "meta": {}
+            }));
+
+            assert.equal(this.element.textContent.trim(), 'template block text');
+        });
+    });
+});
 define('tellersdesk-front/tests/lint/app.lint-test', [], function () {
   'use strict';
 
@@ -4507,6 +4536,11 @@ define('tellersdesk-front/tests/lint/app.lint-test', [], function () {
     assert.ok(true, 'components/characters/character-list/list-item/component.js should pass ESLint\n\n');
   });
 
+  QUnit.test('components/characters/character-view/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/characters/character-view/component.js should pass ESLint\n\n');
+  });
+
   QUnit.test('components/characters/characters-edit/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'components/characters/characters-edit/component.js should pass ESLint\n\n');
@@ -4520,6 +4554,16 @@ define('tellersdesk-front/tests/lint/app.lint-test', [], function () {
   QUnit.test('controllers/characters/list.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'controllers/characters/list.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/characters/update.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/characters/update.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('controllers/characters/view.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'controllers/characters/view.js should pass ESLint\n\n');
   });
 
   QUnit.test('models/character.js', function (assert) {
@@ -4562,6 +4606,11 @@ define('tellersdesk-front/tests/lint/app.lint-test', [], function () {
     assert.ok(true, 'routes/characters/update.js should pass ESLint\n\n');
   });
 
+  QUnit.test('routes/characters/view.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/characters/view.js should pass ESLint\n\n');
+  });
+
   QUnit.test('routes/dashboards.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'routes/dashboards.js should pass ESLint\n\n');
@@ -4592,6 +4641,11 @@ define('tellersdesk-front/tests/lint/tests.lint-test', [], function () {
     assert.ok(true, 'integration/components/characters/character-list-test.js should pass ESLint\n\n');
   });
 
+  QUnit.test('integration/components/characters/character-view-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/characters/character-view-test.js should pass ESLint\n\n');
+  });
+
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');
@@ -4610,6 +4664,16 @@ define('tellersdesk-front/tests/lint/tests.lint-test', [], function () {
   QUnit.test('unit/controllers/characters/list-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/controllers/characters/list-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/controllers/characters/update-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/controllers/characters/update-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/controllers/characters/view-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/controllers/characters/view-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('unit/models/character-test.js', function (assert) {
@@ -4640,6 +4704,11 @@ define('tellersdesk-front/tests/lint/tests.lint-test', [], function () {
   QUnit.test('unit/routes/characters/update-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/routes/characters/update-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/routes/characters/view-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/characters/view-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('unit/routes/dashboards-test.js', function (assert) {
@@ -4715,6 +4784,32 @@ define('tellersdesk-front/tests/unit/controllers/characters/list-test', ['qunit'
         });
     });
 });
+define('tellersdesk-front/tests/unit/controllers/characters/update-test', ['qunit', 'ember-qunit'], function (_qunit, _emberQunit) {
+    'use strict';
+
+    (0, _qunit.module)('Unit | Controller | characters/update', function (hooks) {
+        (0, _emberQunit.setupTest)(hooks);
+
+        // Replace this with your real tests.
+        (0, _qunit.test)('it exists', function (assert) {
+            let controller = this.owner.lookup('controller:characters/update');
+            assert.ok(controller);
+        });
+    });
+});
+define('tellersdesk-front/tests/unit/controllers/characters/view-test', ['qunit', 'ember-qunit'], function (_qunit, _emberQunit) {
+    'use strict';
+
+    (0, _qunit.module)('Unit | Controller | characters/view', function (hooks) {
+        (0, _emberQunit.setupTest)(hooks);
+
+        // Replace this with your real tests.
+        (0, _qunit.test)('it exists', function (assert) {
+            let controller = this.owner.lookup('controller:characters/view');
+            assert.ok(controller);
+        });
+    });
+});
 define('tellersdesk-front/tests/unit/models/character-test', ['qunit', 'ember-qunit'], function (_qunit, _emberQunit) {
     'use strict';
 
@@ -4785,6 +4880,18 @@ define('tellersdesk-front/tests/unit/routes/characters/update-test', ['qunit', '
 
         (0, _qunit.test)('it exists', function (assert) {
             let route = this.owner.lookup('route:characters/update');
+            assert.ok(route);
+        });
+    });
+});
+define('tellersdesk-front/tests/unit/routes/characters/view-test', ['qunit', 'ember-qunit'], function (_qunit, _emberQunit) {
+    'use strict';
+
+    (0, _qunit.module)('Unit | Route | characters/view', function (hooks) {
+        (0, _emberQunit.setupTest)(hooks);
+
+        (0, _qunit.test)('it exists', function (assert) {
+            let route = this.owner.lookup('route:characters/view');
             assert.ok(route);
         });
     });
