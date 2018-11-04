@@ -46,6 +46,8 @@
 
         onItemUpdate: null,
 
+        onItemDelete: null,
+
         actions: {
             itemView(character) {
                 this.onItemView(character);
@@ -53,6 +55,10 @@
 
             itemUpdate(character) {
                 this.onItemUpdate(character);
+            },
+
+            itemDelete(character) {
+                this.onItemDelete(character);
             }
         }
 
@@ -73,6 +79,8 @@
 
         onUpdate: null,
 
+        onDelete: null,
+
         actions: {
             view(character) {
                 this.onView(character);
@@ -80,6 +88,10 @@
 
             update(character) {
                 this.onUpdate(character);
+            },
+
+            delete(character) {
+                this.onDelete(character);
             }
         }
     });
@@ -90,7 +102,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "NAj0gQq0", "block": "{\"symbols\":[],\"statements\":[[7,\"td\"],[9],[1,[23,[\"character\",\"name\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"strength\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"dexterity\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"stamina\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"view\",[23,[\"character\"]]]],[9],[0,\"View\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"update\",[23,[\"character\"]]]],[9],[0,\"Update\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/list-item/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "WWM84+I5", "block": "{\"symbols\":[],\"statements\":[[7,\"td\"],[9],[1,[23,[\"character\",\"name\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"strength\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"dexterity\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"stamina\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"view\",[23,[\"character\"]]]],[9],[0,\"View\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"update\",[23,[\"character\"]]]],[9],[0,\"Update\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"delete\",[23,[\"character\"]]]],[9],[0,\"Delete\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/list-item/template.hbs" } });
 });
 ;define("tellersdesk-front/components/characters/character-list/template", ["exports"], function (exports) {
   "use strict";
@@ -98,7 +110,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "YXjwInl2", "block": "{\"symbols\":[\"character\"],\"statements\":[[7,\"thead\"],[9],[0,\"\\n\"],[7,\"tr\"],[9],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Name\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Strength\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Dexterity\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Stamina\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"characters\"]]],null,{\"statements\":[[0,\"        \"],[1,[27,\"characters/character-list/list-item\",null,[[\"character\",\"onView\",\"onUpdate\"],[[22,1,[]],[27,\"action\",[[22,0,[]],\"itemView\"],null],[27,\"action\",[[22,0,[]],\"itemUpdate\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "DdtlRreC", "block": "{\"symbols\":[\"character\"],\"statements\":[[7,\"thead\"],[9],[0,\"\\n\"],[7,\"tr\"],[9],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Name\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Strength\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Dexterity\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Stamina\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"characters\"]]],null,{\"statements\":[[0,\"        \"],[1,[27,\"characters/character-list/list-item\",null,[[\"character\",\"onView\",\"onUpdate\",\"onDelete\"],[[22,1,[]],[27,\"action\",[[22,0,[]],\"itemView\"],null],[27,\"action\",[[22,0,[]],\"itemUpdate\"],null],[27,\"action\",[[22,0,[]],\"itemDelete\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/template.hbs" } });
 });
 ;define('tellersdesk-front/components/characters/character-view/component', ['exports'], function (exports) {
     'use strict';
@@ -295,6 +307,10 @@
 
             goToUpdate(character) {
                 this.transitionToRoute('characters.update', character.id);
+            },
+
+            async delete(character) {
+                character.destroyRecord();
             }
         }
 
@@ -709,7 +725,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "II94DHuJ", "block": "{\"symbols\":[],\"statements\":[[7,\"h1\"],[9],[0,\"List\"],[10],[0,\"\\n\"],[1,[27,\"characters/character-list\",null,[[\"characters\",\"onItemView\",\"onItemUpdate\"],[[23,[\"model\"]],[27,\"action\",[[22,0,[]],\"goToView\"],null],[27,\"action\",[[22,0,[]],\"goToUpdate\"],null]]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/characters/list.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "SKpRnGoC", "block": "{\"symbols\":[],\"statements\":[[7,\"h1\"],[9],[0,\"List\"],[10],[0,\"\\n\"],[1,[27,\"characters/character-list\",null,[[\"characters\",\"onItemView\",\"onItemUpdate\",\"onItemDelete\"],[[23,[\"model\"]],[27,\"action\",[[22,0,[]],\"goToView\"],null],[27,\"action\",[[22,0,[]],\"goToUpdate\"],null],[27,\"action\",[[22,0,[]],\"delete\"],null]]]],false],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/templates/characters/list.hbs" } });
 });
 ;define("tellersdesk-front/templates/characters/update", ["exports"], function (exports) {
   "use strict";

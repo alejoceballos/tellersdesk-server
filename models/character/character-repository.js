@@ -26,7 +26,7 @@ module.exports = {
 
     /**
      *
-     * @param character
+     * @param {Character} character
      * @returns {Character}
      */
     persist(character) {
@@ -45,5 +45,18 @@ module.exports = {
         }
 
         return toPersist;
+    },
+
+    /**
+     *
+     * @param character
+     */
+    remove(id) {
+        if (!id) throw new Error('No instance\'s to delete');
+
+        const idx = data.findIndex(element => element.id === id);
+        if (idx < 0) throw new Error('Cannot delete. No instance with provided id found');
+
+        delete data[idx];
     }
 };

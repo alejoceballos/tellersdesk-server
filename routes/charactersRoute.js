@@ -16,9 +16,11 @@ const newError = (code, title, detail) => new JSONAPIError({code, title, detail}
 // Character specific functions declarations
 const create = instance => service.create(instance);
 const update = instance => service.update(instance);
+const remove = id => service.remove(id);
 const serialize = data => serializer.serialize(data);
 const creationError = detail => newError('001', 'Could not add character', detail);
 const updateError = detail => newError('002', 'Could not update character', detail);
+const deleteError = detail => newError('003', 'Could not delete character', detail);
 
 /**
  * References:
@@ -63,6 +65,19 @@ router.post('/', function (req, res) {
  */
 router.patch('/:id', function(req, res) {
     persist(req, res, instance => update(instance), HttpStatus.OK, err => updateError(err.message));
+});
+
+/**
+ * DELETE existing character
+ */
+router.delete('/:id', function(req, res) {
+    try {
+        remove(req.params.id);
+        res.status(HttpStatus.NO_CONTENT).send();
+    } catch (err) {
+        const error = deleteError(err.message);
+        res.status(HttpStatus.INTERNAL_SERVER_ERROR).send(error);
+    }
 });
 
 module.exports = router;
