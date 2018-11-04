@@ -15,8 +15,34 @@ const newError = (code, title, detail) => new JSONAPIError({code, title, detail}
 
 // Character specific functions declarations
 const create = instance => service.create(instance);
+const update = instance => service.update(instance);
 const serialize = data => serializer.serialize(data);
 const creationError = detail => newError('001', 'Could not add character', detail);
+const updateError = detail => newError('002', 'Could not update character', detail);
+
+/**
+ * References:
+ *  + https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/#request-body
+ *  + https://stackoverflow.com/questions/4295782/how-do-you-extract-post-data-in-node-js
+ */
+const persist = (req, res, persist, successStatus, retrieveError) => {
+    let rawData = '';
+    req.on('data', chunk => rawData += chunk);
+    req.on('end', async () => {
+        const data = await deserialize(JSON.parse(rawData));
+
+        try {
+            const instance = newInstance(Character, data);
+            const persisted = persist(instance);
+            const serialized = serialize(persisted);
+
+            res.status(successStatus).send(serialized);
+        } catch (err) {
+            const error = retrieveError(err.message);
+            res.status(HttpStatus.INTERNAL_SERVER_ERROR).send(error);
+        }
+    });
+};
 
 /**
  * GET characters listing
@@ -27,28 +53,16 @@ router.get('/', function (req, res /*, next*/) {
 
 /**
  * POST new character
- *
- * References:
- *  + https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/#request-body
- *  + https://stackoverflow.com/questions/4295782/how-do-you-extract-post-data-in-node-js
  */
 router.post('/', function (req, res) {
-    let body = '';
-    req.on('data', data => body += data);
-    req.on('end', async () => {
-        const data = await deserialize(JSON.parse(body));
+    persist(req, res, instance => create(instance), HttpStatus.CREATED, err => creationError(err.message));
+});
 
-        try {
-            const instance = newInstance(Character, data);
-            const created = create(instance);
-            const serialized = serialize(created);
-
-            res.status(HttpStatus.CREATED).send(serialized);
-        } catch (err) {
-            const error = creationError(err.message);
-            res.status(HttpStatus.INTERNAL_SERVER_ERROR).send(error);
-        }
-    });
+/**
+ * PATCH existing character
+ */
+router.patch('/:id', function(req, res) {
+    persist(req, res, instance => update(instance), HttpStatus.OK, err => updateError(err.message));
 });
 
 module.exports = router;

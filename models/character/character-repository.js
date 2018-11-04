@@ -10,16 +10,26 @@ module.exports = {
      *
      * @returns {Character[]}
      */
-    findAll: function () {
+    findAll() {
         return data;
     },
 
     /**
      *
-     * @param character
-     * @returns {Character | Character | {id}}
+     * @param id
+     * @returns {Character}
      */
-    persist: function (character) {
+    findById(id) {
+        const filtered = data.filter((character) => character.id === id);
+        return filtered.pop();
+    },
+
+    /**
+     *
+     * @param character
+     * @returns {Character}
+     */
+    persist(character) {
         if (!character) throw new Error('No instance to persist');
         if (!(character instanceof Character)) throw new Error('Wrong type of model to persist');
 
