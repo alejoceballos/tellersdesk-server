@@ -1,3 +1,4 @@
+// https://github.com/SeyZ/jsonapi-serializer
 const JSONAPISerializer = require('jsonapi-serializer');
 
 const jsonApiType = 'characters';

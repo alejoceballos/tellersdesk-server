@@ -575,28 +575,20 @@
     exports.default = Router;
 });
 ;define('tellersdesk-front/routes/application', ['exports'], function (exports) {
-    'use strict';
+  'use strict';
 
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.default = Ember.Route.extend({
-        beforeModel() {
-            // console.log('APPLICATION!!!');
-        }
-    });
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Route.extend({});
 });
 ;define('tellersdesk-front/routes/characters', ['exports'], function (exports) {
-    'use strict';
+  'use strict';
 
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.default = Ember.Route.extend({
-        beforeModel() {
-            // console.log('CHARACTERS!!!');
-        }
-    });
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Route.extend({});
 });
 ;define('tellersdesk-front/routes/characters/create', ['exports'], function (exports) {
     'use strict';
@@ -605,13 +597,11 @@
         value: true
     });
     exports.default = Ember.Route.extend({
-        beforeModel() {
-            // console.log('CHARACTERS/CREATE!!!');
-        },
 
         model() {
             return this.store.createRecord('character');
         }
+
     });
 });
 ;define('tellersdesk-front/routes/characters/list', ['exports'], function (exports) {
@@ -621,13 +611,11 @@
         value: true
     });
     exports.default = Ember.Route.extend({
-        beforeModel() {
-            // console.log('CHARACTERS/LIST!!!');
-        },
 
         model() {
             return this.store.findAll('character');
         }
+
     });
 });
 ;define('tellersdesk-front/routes/characters/update', ['exports'], function (exports) {
@@ -659,28 +647,20 @@
     });
 });
 ;define('tellersdesk-front/routes/dashboards', ['exports'], function (exports) {
-    'use strict';
+  'use strict';
 
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.default = Ember.Route.extend({
-        beforeModel() {
-            // console.log('DASHBOARD!!!');
-        }
-    });
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Route.extend({});
 });
 ;define('tellersdesk-front/routes/index', ['exports'], function (exports) {
-    'use strict';
+  'use strict';
 
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.default = Ember.Route.extend({
-        beforeModel() {
-            // console.log('INDEX!!!');
-        }
-    });
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Route.extend({});
 });
 ;define('tellersdesk-front/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _ajax) {
   'use strict';
@@ -774,7 +754,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+3f414d78"});
+            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+9878a69f"});
           }
         
 //# sourceMappingURL=tellersdesk-front.map

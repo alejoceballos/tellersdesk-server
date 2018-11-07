@@ -35,7 +35,7 @@ const persist = (req, res, persist, successStatus, retrieveError) => {
 
         try {
             const instance = newInstance(Character, data);
-            const persisted = persist(instance);
+            const persisted = await persist(instance);
             const serialized = serialize(persisted);
 
             res.status(successStatus).send(serialized);
@@ -49,8 +49,11 @@ const persist = (req, res, persist, successStatus, retrieveError) => {
 /**
  * GET characters listing
  */
-router.get('/', function (req, res /*, next*/) {
-    res.send(serialize(service.findAll()));
+router.get('/', async function (req, res /*, next*/) {
+    const characters = await service.findAll();
+    const serialized = serialize(characters);
+
+    res.send(serialized);
 });
 
 /**

@@ -1,6 +1,9 @@
-class Character {
+const ObjectIdentified = require('../object-identified-model');
+
+class Character extends ObjectIdentified {
 
     constructor(values) {
+        super();
         Object.assign(this, values);
     }
 

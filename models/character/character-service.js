@@ -1,17 +1,25 @@
 const repository = require('./character-repository');
 
 module.exports = {
-    findAll() {
-        return repository.findAll();
+    /**
+     * @returns {Promise<Character[]>}
+     */
+    async findAll() {
+        return await repository.findAll();
     },
 
     findById(id) {
         return repository.findById(id);
     },
 
-    create(instance) {
+    /**
+     * @param {Character}instance
+     * @returns {Promise<Character>}
+     */
+    async create(instance) {
         if (instance.id) throw new Error('A new character should not have ID');
-        return repository.persist(instance);
+        const persisted = await repository.persist(instance);
+        return persisted;
     },
 
     update(instance) {

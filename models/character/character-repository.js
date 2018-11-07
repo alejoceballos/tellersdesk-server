@@ -1,17 +1,38 @@
-const uuid = require('uuid/v4'),
-    Character = require('./character-model'),
-    data = [
-        Character.newInstance({id: uuid(), name: 'Dominic Doonshield', strength: 3, dexterity: 3, stamina: 4}),
-        Character.newInstance({id: uuid(), name: 'Lys Aming Nielle', strength: 2, dexterity: 5, stamina: 3})
-    ];
+const MongoClient = require('mongodb').MongoClient;
+// const uuid = require('uuid/v4');
+
+const Character = require('./character-model');
+
+const data = [
+    // Character.newInstance({id: uuid(), name: 'Dominic Doonshield', strength: 3, dexterity: 3, stamina: 4}),
+    // Character.newInstance({id: uuid(), name: 'Lys Aming Nielle', strength: 2, dexterity: 5, stamina: 3})
+];
+
+const dbInfra = {
+    async getInfra() {
+        const mongoClient = new MongoClient('mongodb://localhost:27017');
+        const connectedClient = await mongoClient.connect();
+        const db = connectedClient.db('tellersdesk_db');
+
+        return {
+            client: mongoClient,
+            collection: db.collection('characters')
+        };
+    }
+};
 
 module.exports = {
     /**
-     *
-     * @returns {Character[]}
+     * @returns {Promise<Character[]>}
      */
-    findAll() {
-        return data;
+    async findAll() {
+        const {client, collection} = await dbInfra.getInfra();
+        const cursor = collection.find({});
+        const docs = await cursor.toArray();
+        const characters = docs.map(doc => new Character(doc));
+        client.close();
+
+        return characters;
     },
 
     /**
@@ -25,26 +46,28 @@ module.exports = {
     },
 
     /**
-     *
      * @param {Character} character
-     * @returns {Character}
+     * @returns {Promise<Character>}
      */
-    persist(character) {
+    async persist(character) {
         if (!character) throw new Error('No instance to persist');
         if (!(character instanceof Character)) throw new Error('Wrong type of model to persist');
 
-        let toPersist;
+        const {client, collection} = await dbInfra.getInfra();
 
         if (character.id) {
-            const idx = data.findIndex(element => element.id === character.id);
-            if (idx < 0) throw new Error('Cannot update. No instance with provided id found');
-
-            data[idx] = toPersist = Object.assign(Character.newInstance(), character);
+            // const idx = data.findIndex(element => element.id === character.id);
+            // if (idx < 0) throw new Error('Cannot update. No instance with provided id found');
+            //
+            // data[idx] = toPersist = Object.assign(Character.newInstance(), character);
         } else {
-            data.push(toPersist = Object.assign(Character.newInstance({ id: uuid() }), character));
+            await collection.insertOne(character);
+            // data.push(toPersist = Object.assign(Character.newInstance({ id: uuid() }), character));
         }
 
-        return toPersist;
+        client.close();
+
+        return character;
     },
 
     /**
