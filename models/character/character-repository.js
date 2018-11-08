@@ -1,16 +1,12 @@
 const MongoClient = require('mongodb').MongoClient;
+const ObjectID = require('mongodb').ObjectID;
 // const uuid = require('uuid/v4');
 
 const Character = require('./character-model');
 
-const data = [
-    // Character.newInstance({id: uuid(), name: 'Dominic Doonshield', strength: 3, dexterity: 3, stamina: 4}),
-    // Character.newInstance({id: uuid(), name: 'Lys Aming Nielle', strength: 2, dexterity: 5, stamina: 3})
-];
-
 const dbInfra = {
     async getInfra() {
-        const mongoClient = new MongoClient('mongodb://localhost:27017');
+        const mongoClient = new MongoClient('mongodb://localhost:27017', { useNewUrlParser: true });
         const connectedClient = await mongoClient.connect();
         const db = connectedClient.db('tellersdesk_db');
 
@@ -40,9 +36,13 @@ module.exports = {
      * @param id
      * @returns {Character}
      */
-    findById(id) {
-        const filtered = data.filter((character) => character.id === id);
-        return filtered.pop();
+    async findById(id) {
+        const {client, collection} = await dbInfra.getInfra();
+        const doc = await collection.findOne({_id: ObjectID(id)});
+        const character = new Character(doc);
+        client.close();
+
+        return character;
     },
 
     /**
@@ -56,13 +56,12 @@ module.exports = {
         const {client, collection} = await dbInfra.getInfra();
 
         if (character.id) {
-            // const idx = data.findIndex(element => element.id === character.id);
-            // if (idx < 0) throw new Error('Cannot update. No instance with provided id found');
-            //
-            // data[idx] = toPersist = Object.assign(Character.newInstance(), character);
+            await collection.updateOne(
+                { _id: ObjectID(character.id)},
+                { $set: character }
+            );
         } else {
             await collection.insertOne(character);
-            // data.push(toPersist = Object.assign(Character.newInstance({ id: uuid() }), character));
         }
 
         client.close();
@@ -76,10 +75,10 @@ module.exports = {
      */
     remove(id) {
         if (!id) throw new Error('No instance\'s to delete');
-
-        const idx = data.findIndex(element => element.id === id);
-        if (idx < 0) throw new Error('Cannot delete. No instance with provided id found');
-
-        delete data[idx];
+        //
+        // const idx = data.findIndex(element => element.id === id);
+        // if (idx < 0) throw new Error('Cannot delete. No instance with provided id found');
+        //
+        // delete data[idx];
     }
 };

@@ -57,6 +57,16 @@ router.get('/', async function (req, res /*, next*/) {
 });
 
 /**
+ * GET character
+ */
+router.get('/:id', async function (req, res /*, next*/) {
+    const character = await service.findById(req.params.id);
+    const serialized = serialize(character);
+
+    res.send(serialized);
+});
+
+/**
  * POST new character
  */
 router.post('/', function (req, res) {

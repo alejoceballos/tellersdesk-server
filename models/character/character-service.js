@@ -8,8 +8,8 @@ module.exports = {
         return await repository.findAll();
     },
 
-    findById(id) {
-        return repository.findById(id);
+    async findById(id) {
+        return await repository.findById(id);
     },
 
     /**
@@ -22,9 +22,9 @@ module.exports = {
         return persisted;
     },
 
-    update(instance) {
+    async update(instance) {
         if (!instance.id) throw new Error('An ID is needed to update a character');
-        return repository.persist(instance);
+        return await repository.persist(instance);
     },
 
     remove(id) {
