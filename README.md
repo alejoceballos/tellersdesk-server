@@ -1,8 +1,10 @@
-# Tellers' Desk
+# Tellers' Desk - Server
 
 A study case system used to learn a set of Web Technologies (Javascript/ES6/Ember.js, CSS/SASS, Node.js/Express and MongoDB). The system is another attempt to create a **Storytelling RPG** manager (for the former "New World of Darkness - **nWoD**", now "Chronicles of Darkness - **CofD**") to aid storytellers around the world.
 
 For more information regarding Storytelling and nWoD/CofD, check <https://en.wikipedia.org/wiki/White_Wolf_Publishing> or <http://theonyxpath.com/category/worlds/chroniclesofdarkness/>. 
+
+For the front-end project got to [Teller's Desk - Front](https://github.com/alejoceballos/tellersdesk-front "https://github.com/alejoceballos/tellersdesk-front")
 
 ### To make a long story short...
 
