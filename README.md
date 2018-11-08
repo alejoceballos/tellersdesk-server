@@ -1,6 +1,6 @@
 # Tellers' Desk
 
-A study case system used to learn a set of Web Technologies (Javascript/ES6/Ember.js, CSS/SASS, PHP/Symfony/Doctrine and Nginx). The system is another attempt to create a **Storytelling RPG** manager (for the former "New World of Darkness - **nWoD**", now "Chronicles of Darkness - **CofD**") to aid storytellers around the world.
+A study case system used to learn a set of Web Technologies (Javascript/ES6/Ember.js, CSS/SASS, Node.js/Express and MongoDB). The system is another attempt to create a **Storytelling RPG** manager (for the former "New World of Darkness - **nWoD**", now "Chronicles of Darkness - **CofD**") to aid storytellers around the world.
 
 For more information regarding Storytelling and nWoD/CofD, check <https://en.wikipedia.org/wiki/White_Wolf_Publishing> or <http://theonyxpath.com/category/worlds/chroniclesofdarkness/>. 
 
@@ -40,6 +40,7 @@ TBD
 # **Thanks to...**
 ... The development team and supporters of the applications below, without them I could not even start this project at such low cost (I'm $upporting some of them, just to let you know):
 + Ember.js - [http://emberjs.com/](http://emberjs.com/ "http://emberjs.com/")
++ Express - [https://expressjs.com/](https://expressjs.com/ "https://expressjs.com/")
 + Gimp - [http://www.gimp.org/](http://www.gimp.org/ "http://www.gimp.org/")
 + Git - [http://git-scm.com/](http://git-scm.com/ "http://git-scm.com/")
 + GitHub - [https://github.com/](https://github.com/ "https://github.com/")
