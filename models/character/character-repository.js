@@ -1,6 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
-// const uuid = require('uuid/v4');
 
 const Character = require('./character-model');
 
@@ -33,8 +32,8 @@ module.exports = {
 
     /**
      *
-     * @param id
-     * @returns {Character}
+     * @param {string} id
+     * @returns {Promise<Character>}
      */
     async findById(id) {
         const {client, collection} = await dbInfra.getInfra();
@@ -70,15 +69,13 @@ module.exports = {
     },
 
     /**
-     *
-     * @param character
+     * @param {string} id
      */
-    remove(id) {
+    async remove(id) {
         if (!id) throw new Error('No instance\'s to delete');
-        //
-        // const idx = data.findIndex(element => element.id === id);
-        // if (idx < 0) throw new Error('Cannot delete. No instance with provided id found');
-        //
-        // delete data[idx];
+
+        const {client, collection} = await dbInfra.getInfra();
+        await collection.deleteOne({_id: ObjectID(id)});
+        client.close();
     }
 };

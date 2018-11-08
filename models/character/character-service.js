@@ -8,6 +8,9 @@ module.exports = {
         return await repository.findAll();
     },
 
+    /**
+     * @returns {Promise<Character>}
+     */
     async findById(id) {
         return await repository.findById(id);
     },
@@ -18,17 +21,19 @@ module.exports = {
      */
     async create(instance) {
         if (instance.id) throw new Error('A new character should not have ID');
-        const persisted = await repository.persist(instance);
-        return persisted;
+        return await repository.persist(instance);
     },
 
+    /**
+     * @returns {Promise<Character>}
+     */
     async update(instance) {
         if (!instance.id) throw new Error('An ID is needed to update a character');
         return await repository.persist(instance);
     },
 
-    remove(id) {
+    async remove(id) {
         if (!id) throw new Error('An ID is needed to delete a character');
-        repository.remove(id);
+        await repository.remove(id);
     }
 };

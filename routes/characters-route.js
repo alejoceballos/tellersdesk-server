@@ -83,9 +83,9 @@ router.patch('/:id', function(req, res) {
 /**
  * DELETE existing character
  */
-router.delete('/:id', function(req, res) {
+router.delete('/:id', async function(req, res) {
     try {
-        remove(req.params.id);
+        await remove(req.params.id);
         res.status(HttpStatus.NO_CONTENT).send();
     } catch (err) {
         const error = deleteError(err.message);
