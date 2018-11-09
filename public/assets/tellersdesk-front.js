@@ -102,7 +102,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "WWM84+I5", "block": "{\"symbols\":[],\"statements\":[[7,\"td\"],[9],[1,[23,[\"character\",\"name\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"strength\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"dexterity\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"stamina\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"view\",[23,[\"character\"]]]],[9],[0,\"View\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"update\",[23,[\"character\"]]]],[9],[0,\"Update\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"delete\",[23,[\"character\"]]]],[9],[0,\"Delete\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/list-item/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "c6+22TZI", "block": "{\"symbols\":[],\"statements\":[[7,\"td\"],[9],[1,[23,[\"character\",\"name\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"strength\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"dexterity\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"stamina\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"charisma\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"manipulation\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"appearance\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"perception\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"intelligence\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[1,[23,[\"character\",\"wits\"]],false],[10],[0,\"\\n\"],[7,\"td\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"view\",[23,[\"character\"]]]],[9],[0,\"View\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"update\",[23,[\"character\"]]]],[9],[0,\"Update\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"delete\",[23,[\"character\"]]]],[9],[0,\"Delete\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/list-item/template.hbs" } });
 });
 ;define("tellersdesk-front/components/characters/character-list/template", ["exports"], function (exports) {
   "use strict";
@@ -110,7 +110,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "DdtlRreC", "block": "{\"symbols\":[\"character\"],\"statements\":[[7,\"thead\"],[9],[0,\"\\n\"],[7,\"tr\"],[9],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Name\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Strength\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Dexterity\"],[10],[0,\"\\n    \"],[7,\"th\"],[9],[0,\"Stamina\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"characters\"]]],null,{\"statements\":[[0,\"        \"],[1,[27,\"characters/character-list/list-item\",null,[[\"character\",\"onView\",\"onUpdate\",\"onDelete\"],[[22,1,[]],[27,\"action\",[[22,0,[]],\"itemView\"],null],[27,\"action\",[[22,0,[]],\"itemUpdate\"],null],[27,\"action\",[[22,0,[]],\"itemDelete\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "jPHkdMlJ", "block": "{\"symbols\":[\"character\"],\"statements\":[[7,\"thead\"],[9],[0,\"\\n    \"],[7,\"tr\"],[9],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Name\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Strength\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Dexterity\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"Stamina\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"charisma\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"manipulation\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"appearance\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"perception\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"intelligence\"],[10],[0,\"\\n        \"],[7,\"th\"],[9],[0,\"wits\"],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"tbody\"],[9],[0,\"\\n\"],[4,\"each\",[[23,[\"characters\"]]],null,{\"statements\":[[0,\"        \"],[1,[27,\"characters/character-list/list-item\",null,[[\"character\",\"onView\",\"onUpdate\",\"onDelete\"],[[22,1,[]],[27,\"action\",[[22,0,[]],\"itemView\"],null],[27,\"action\",[[22,0,[]],\"itemUpdate\"],null],[27,\"action\",[[22,0,[]],\"itemDelete\"],null]]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-list/template.hbs" } });
 });
 ;define('tellersdesk-front/components/characters/character-view/component', ['exports'], function (exports) {
     'use strict';
@@ -212,21 +212,21 @@
 
             const attrMaxVals = this.get('attributesMaxValues').map(val => val);
 
-            const strengthMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.strength')));
-            if (strengthMaxIdx < 0) {
-                throw new Error('Strength points not distributed accordingly');
+            const physicalMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.physicalAttributesTotal')));
+            if (physicalMaxIdx < 0) {
+                throw new Error('Physical attributes points not distributed accordingly');
             }
-            delete attrMaxVals[strengthMaxIdx];
+            delete attrMaxVals[physicalMaxIdx];
 
-            const dexterityMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.dexterity')));
-            if (dexterityMaxIdx < 0) {
-                throw new Error('Dexterity points not distributed accordingly');
+            const socialMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.socialAttributesTotal')));
+            if (socialMaxIdx < 0) {
+                throw new Error('Social attributes points not distributed accordingly');
             }
-            delete attrMaxVals[dexterityMaxIdx];
+            delete attrMaxVals[socialMaxIdx];
 
-            const staminaMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.stamina')));
-            if (staminaMaxIdx < 0) {
-                throw new Error('Stamina points not distributed accordingly');
+            const mentalMaxIdx = attrMaxVals.indexOf(parseInt(this.get('character.mentalAttributesTotal')));
+            if (mentalMaxIdx < 0) {
+                throw new Error('Mental attributes points not distributed accordingly');
             }
         },
 
@@ -250,7 +250,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "kpZMlnv4", "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Name:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"name\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Strength:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"strength\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Dexterity:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"dexterity\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Stamina:\"],[10],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"stamina\"]]]]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"character\"]]]],[9],[0,\"Save\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"cancel\",[23,[\"character\"]]]],[9],[0,\"Cancel\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/characters-edit/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "NtnUs2a4", "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"class\",\"character_info_list_container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--name\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Name:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"name\"]]]]],false],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--other\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Age:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[7,\"input\"],[11,\"type\",\"text\"],[9],[10],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--other\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Sex:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[7,\"input\"],[11,\"type\",\"text\"],[9],[10],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"character_attr_list_container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Strength:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"strength\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Dexterity:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"dexterity\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Stamina:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"stamina\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"charisma:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"charisma\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"manipulation:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"manipulation\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"appearance:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"appearance\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"perception:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"perception\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"intelligence:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"intelligence\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"wits:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"wits\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"character_edit--options\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"character\"]]]],[9],[0,\"Save\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"cancel\",[23,[\"character\"]]]],[9],[0,\"Cancel\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/characters-edit/template.hbs" } });
 });
 ;define('tellersdesk-front/components/welcome-page', ['exports', 'ember-welcome-page/components/welcome-page'], function (exports, _welcomePage) {
   'use strict';
@@ -531,12 +531,33 @@
     });
     exports.default = _emberData.default.Model.extend({
         name: _emberData.default.attr('string'),
+
         strength: _emberData.default.attr('number', { defaultValue: 1 }),
         dexterity: _emberData.default.attr('number', { defaultValue: 1 }),
         stamina: _emberData.default.attr('number', { defaultValue: 1 }),
 
-        attributesTotal: Ember.computed('strength', 'dexterity', 'stamina', function () {
+        charisma: _emberData.default.attr('number', { defaultValue: 1 }),
+        manipulation: _emberData.default.attr('number', { defaultValue: 1 }),
+        appearance: _emberData.default.attr('number', { defaultValue: 1 }),
+
+        perception: _emberData.default.attr('number', { defaultValue: 1 }),
+        intelligence: _emberData.default.attr('number', { defaultValue: 1 }),
+        wits: _emberData.default.attr('number', { defaultValue: 1 }),
+
+        physicalAttributesTotal: Ember.computed('strength', 'dexterity', 'stamina', function () {
             return parseInt(this.get('strength')) + parseInt(this.get('dexterity')) + parseInt(this.get('stamina'));
+        }),
+
+        socialAttributesTotal: Ember.computed('charisma', 'manipulation', 'appearance', function () {
+            return parseInt(this.get('charisma')) + parseInt(this.get('manipulation')) + parseInt(this.get('appearance'));
+        }),
+
+        mentalAttributesTotal: Ember.computed('perception', 'intelligence', 'wits', function () {
+            return parseInt(this.get('perception')) + parseInt(this.get('intelligence')) + parseInt(this.get('wits'));
+        }),
+
+        attributesTotal: Ember.computed('physicalAttributesTotal', 'socialAttributesTotal', 'mentalAttributesTotal', function () {
+            return this.get('physicalAttributesTotal') + this.get('socialAttributesTotal') + this.get('mentalAttributesTotal');
         })
     });
 });

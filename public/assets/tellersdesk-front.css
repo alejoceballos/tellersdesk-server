@@ -1,0 +1,60 @@
+/*
+ * Character INFO
+ */
+.character_info_list_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.character_info_list_container .character_info--name {
+    width: 60%;
+}
+
+.character_info_list_container .character_info--name span input {
+    width: 80%;
+}
+
+.character_info_list_container .character_info--other {
+    width: 20%;
+}
+
+.character_info_list_container .character_info--other span input  {
+    width: 2rem;
+}
+
+/*
+ * Character Attributes
+ */
+.character_attr_list_container {
+    display: flex;
+}
+
+.character_attr_list_container .character_attr_list_container--type {
+    width: 33%;
+}
+
+.character_attr_list_container div div {
+    margin-top: 0.3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.character_attr_list_container div div label {
+    width: 6rem;
+}
+
+.character_attr_list_container div div span {
+    margin-right: 1rem;
+}
+
+.character_attr_list_container div div span input {
+    width: 2rem;
+}
+
+/*
+ * Character EDIT Options
+ */
+
+.character_edit--options {
+    margin-top: 0.3rem;
+}

@@ -14,6 +14,10 @@ class ObjectIdentified {
         this._id = new ObjectID(id);
     }
 
+    constructor(values) {
+        Object.assign(this, values);
+    }
+
 }
 
 module.exports = ObjectIdentified;

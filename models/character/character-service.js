@@ -32,6 +32,10 @@ module.exports = {
         return await repository.persist(instance);
     },
 
+    /**
+     * @param {string} id
+     * @returns {Promise<void>}
+     */
     async remove(id) {
         if (!id) throw new Error('An ID is needed to delete a character');
         await repository.remove(id);
