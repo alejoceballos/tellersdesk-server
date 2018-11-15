@@ -43,6 +43,7 @@ TBD
 ... The development team and supporters of the applications below, without them I could not even start this project at such low cost (I'm $upporting some of them, just to let you know):
 + Ember.js - [http://emberjs.com/](http://emberjs.com/ "http://emberjs.com/")
 + Express - [https://expressjs.com/](https://expressjs.com/ "https://expressjs.com/")
++ Font Awesome - [https://fontawesome.com/](https://fontawesome.com/ "https://fontawesome.com/")
 + Gimp - [http://www.gimp.org/](http://www.gimp.org/ "http://www.gimp.org/")
 + Git - [http://git-scm.com/](http://git-scm.com/ "http://git-scm.com/")
 + GitHub - [https://github.com/](https://github.com/ "https://github.com/")
@@ -51,12 +52,29 @@ TBD
 + MongoDB - [https://www.mongodb.com/](https://www.mongodb.com/ "https://www.mongodb.com/")
 + Mozilla Firefox - [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/ "https://www.mozilla.org/en-US/firefox/new/")
 + Node.js - [http://nodejs.org/](http://nodejs.org/ "http://nodejs.org/")
++ Robo 3T - [https://www.robomongo.org/](https://www.robomongo.org/ "https://www.robomongo.org/")
 + Ubuntu Desktop - [http://www.ubuntu.com/desktop](http://www.ubuntu.com/desktop "http://www.ubuntu.com/desktop")
 
-Special thanks to:
-+ All the guys that have created all these wonderful Javascript libraries I was able to use!
+**Node.js Libraries**
++ http-errors - [https://github.com/jshttp/http-errors](https://github.com/jshttp/http-errors "https://github.com/jshttp/http-errors")
++ http-status-codes - [https://github.com/prettymuchbryce/node-http-status](https://github.com/prettymuchbryce/node-http-status "https://github.com/prettymuchbryce/node-http-status")
++ jsonapi-serializer - [https://github.com/SeyZ/jsonapi-serializer](https://github.com/SeyZ/jsonapi-serializer "https://github.com/SeyZ/jsonapi-serializer")
++ MongoDB Node.JS Driver - [https://mongodb.github.io/node-mongodb-native/](https://mongodb.github.io/node-mongodb-native/ "https://mongodb.github.io/node-mongodb-native/")
 
-I also thank to [Intellij IDEA](https://www.jetbrains.com/idea/ "Intellij IDEA") team and all the guys in JetBrains. Your IDE rocks (even though I'm paying for it. Money well spent).
+**Ember Addons/Libraries:**
++ ember-cli-sass - [https://github.com/aexmachina/ember-cli-sass](https://github.com/aexmachina/ember-cli-sass "https://github.com/aexmachina/ember-cli-sass")
++ ember-fontawesome - [https://github.com/FortAwesome/ember-fontawesome](https://github.com/FortAwesome/ember-fontawesome "https://github.com/FortAwesome/ember-fontawesome")
++ ember-intl - [https://github.com/ember-intl/ember-intl](https://github.com/ember-intl/ember-intl "https://github.com/ember-intl/ember-intl")
+
+**Special thanks to:**
++ All the guys that have created all these wonderful Javascript libraries, hidden in the dungeons of the ones referenced here, that I was able to use!
+
+**Even though I'm paying for... Thanks to...**
++ The [GitKraken](https://www.gitkraken.com/ "https://www.gitkraken.com/") team for creating a truly cross platform and beautiful Git Client;
++ The [Intellij IDEA](https://www.jetbrains.com/idea/ "Intellij IDEA") team and all the guys in JetBrains. Your IDE rocks (Money well spent). Among your plugins in the repository, special thanks to:
+    + .ignore - [http://ignore.hsz.mobi/]
+    + idea-handlebars - [https://github.com/dmarcotte/idea-handlebars]
+    + intellij-emberjs - [https://github.com/Turbo87/intellij-emberjs]
 
 # By the way...
 If you find any broken link, English mistakes (there must be tons) or any type of fix you think its worth of noticing... Please, **contact me**! My contact info can be found in my **GitHub** profile. Thanks!
