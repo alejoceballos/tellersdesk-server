@@ -4511,6 +4511,64 @@ define('tellersdesk-front/tests/integration/components/characters/character-view
         });
     });
 });
+define('tellersdesk-front/tests/integration/components/level-picker-test', ['qunit', 'ember-qunit', '@ember/test-helpers'], function (_qunit, _emberQunit, _testHelpers) {
+    'use strict';
+
+    (0, _qunit.module)('Integration | Component | level-picker', function (hooks) {
+        (0, _emberQunit.setupRenderingTest)(hooks);
+
+        (0, _qunit.test)('it renders', async function (assert) {
+            // Set any properties with this.set('myProperty', 'value');
+            // Handle any actions with this.set('myAction', function(val) { ... });
+
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "Lh8fQAUF",
+                "block": "{\"symbols\":[],\"statements\":[[1,[21,\"level-picker\"],false]],\"hasEval\":false}",
+                "meta": {}
+            }));
+
+            assert.equal(this.element.textContent.trim(), '');
+
+            // Template block usage:
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "iwFLCOPN",
+                "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"level-picker\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
+                "meta": {}
+            }));
+
+            assert.equal(this.element.textContent.trim(), 'template block text');
+        });
+    });
+});
+define('tellersdesk-front/tests/integration/components/level-picker/level-affordance-test', ['qunit', 'ember-qunit', '@ember/test-helpers'], function (_qunit, _emberQunit, _testHelpers) {
+    'use strict';
+
+    (0, _qunit.module)('Integration | Component | level-picker/level-affordance', function (hooks) {
+        (0, _emberQunit.setupRenderingTest)(hooks);
+
+        (0, _qunit.test)('it renders', async function (assert) {
+            // Set any properties with this.set('myProperty', 'value');
+            // Handle any actions with this.set('myAction', function(val) { ... });
+
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "bgfsDw4V",
+                "block": "{\"symbols\":[],\"statements\":[[1,[21,\"level-picker/level-affordance\"],false]],\"hasEval\":false}",
+                "meta": {}
+            }));
+
+            assert.equal(this.element.textContent.trim(), '');
+
+            // Template block usage:
+            await (0, _testHelpers.render)(Ember.HTMLBars.template({
+                "id": "v2RYW10b",
+                "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[4,\"level-picker/level-affordance\",null,null,{\"statements\":[[0,\"        template block text\\n\"]],\"parameters\":[]},null],[0,\"    \"]],\"hasEval\":false}",
+                "meta": {}
+            }));
+
+            assert.equal(this.element.textContent.trim(), 'template block text');
+        });
+    });
+});
 define('tellersdesk-front/tests/lint/app.lint-test', [], function () {
   'use strict';
 
@@ -4544,6 +4602,16 @@ define('tellersdesk-front/tests/lint/app.lint-test', [], function () {
   QUnit.test('components/characters/characters-edit/component.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'components/characters/characters-edit/component.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/level-picker/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/level-picker/component.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('components/level-picker/level-affordance/component.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/level-picker/level-affordance/component.js should pass ESLint\n\n');
   });
 
   QUnit.test('controllers/characters/create.js', function (assert) {
@@ -4644,6 +4712,16 @@ define('tellersdesk-front/tests/lint/tests.lint-test', [], function () {
   QUnit.test('integration/components/characters/character-view-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/characters/character-view-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('integration/components/level-picker-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/level-picker-test.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('integration/components/level-picker/level-affordance-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/level-picker/level-affordance-test.js should pass ESLint\n\n');
   });
 
   QUnit.test('test-helper.js', function (assert) {

@@ -143,7 +143,7 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "9QwsOZT1", "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Name:\"],[10],[0,\" \"],[1,[23,[\"character\",\"name\"]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Strength:\"],[10],[0,\" \"],[1,[23,[\"character\",\"strength\"]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Dexterity:\"],[10],[0,\" \"],[1,[23,[\"character\",\"dexterity\"]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"label\"],[9],[0,\"Stamina:\"],[10],[0,\" \"],[1,[23,[\"character\",\"stamina\"]],false],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"cancel\",[23,[\"character\"]]]],[9],[0,\"Cancel\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"edit\",[23,[\"character\"]]]],[9],[0,\"Edit\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-view/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "hI1KQHh4", "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"class\",\"character_info_list_container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--name\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Name:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[1,[23,[\"character\",\"name\"]],false],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--other\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Age:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[7,\"input\"],[11,\"type\",\"text\"],[9],[10],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--other\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Sex:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[7,\"input\"],[11,\"type\",\"text\"],[9],[10],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"character_attr_list_container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Strength:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"strength\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"strength\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Dexterity:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"dexterity\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"dexterity\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Stamina:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"stamina\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"stamina\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[1,[23,[\"character\",\"physicalAttributesTotal\"]],false],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"charisma:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"charisma\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"charisma\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"manipulation:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"manipulation\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"manipulation\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"appearance:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"appearance\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"appearance\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[1,[23,[\"character\",\"socialAttributesTotal\"]],false],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"perception:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"perception\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"perception\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"intelligence:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"intelligence\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"intelligence\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"wits:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"readOnly\",\"currentValue\",\"max\"],[true,[23,[\"character\",\"wits\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"wits\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[1,[23,[\"character\",\"mentalAttributesTotal\"]],false],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"cancel\",[23,[\"character\"]]]],[9],[0,\"Cancel\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"edit\",[23,[\"character\"]]]],[9],[0,\"Edit\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/character-view/template.hbs" } });
 });
 ;define('tellersdesk-front/components/characters/characters-edit/component', ['exports'], function (exports) {
     'use strict';
@@ -250,7 +250,123 @@
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "NtnUs2a4", "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"class\",\"character_info_list_container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--name\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Name:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"name\"]]]]],false],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--other\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Age:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[7,\"input\"],[11,\"type\",\"text\"],[9],[10],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--other\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Sex:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[7,\"input\"],[11,\"type\",\"text\"],[9],[10],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"character_attr_list_container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Strength:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"strength\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Dexterity:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"dexterity\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Stamina:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"stamina\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"charisma:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"charisma\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"manipulation:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"manipulation\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"appearance:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"appearance\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"perception:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"perception\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"intelligence:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"intelligence\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"wits:\"],[10],[0,\"\\n            \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"wits\"]]]]],false],[10],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"character_edit--options\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"character\"]]]],[9],[0,\"Save\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"cancel\",[23,[\"character\"]]]],[9],[0,\"Cancel\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/characters-edit/template.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "3Ln4pMdT", "block": "{\"symbols\":[],\"statements\":[[7,\"div\"],[11,\"class\",\"character_info_list_container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--name\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Name:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[1,[27,\"input\",null,[[\"value\"],[[23,[\"character\",\"name\"]]]]],false],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--other\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Age:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[7,\"input\"],[11,\"type\",\"text\"],[9],[10],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_info--other\"],[9],[0,\"\\n        \"],[7,\"label\"],[9],[0,\"Sex:\"],[10],[0,\"\\n        \"],[7,\"span\"],[9],[7,\"input\"],[11,\"type\",\"text\"],[9],[10],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"character_attr_list_container\"],[9],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Strength:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"strength\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"strength\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Dexterity:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"dexterity\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"dexterity\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"Stamina:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"stamina\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"stamina\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[1,[23,[\"character\",\"physicalAttributesTotal\"]],false],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"charisma:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"charisma\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"charisma\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"manipulation:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"manipulation\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"manipulation\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"appearance:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"appearance\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"appearance\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[1,[23,[\"character\",\"socialAttributesTotal\"]],false],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n    \"],[7,\"div\"],[11,\"class\",\"character_attr_list_container--type\"],[9],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"perception:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"perception\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"perception\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"intelligence:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"intelligence\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"intelligence\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[7,\"label\"],[9],[0,\"wits:\"],[10],[0,\"\\n            \"],[1,[27,\"level-picker\",null,[[\"currentValue\",\"max\"],[[23,[\"character\",\"wits\"]],[23,[\"character\",\"maxAttributeLevel\"]]]]],false],[0,\"\\n            (\"],[1,[23,[\"character\",\"wits\"]],false],[0,\")\\n        \"],[10],[0,\"\\n        \"],[7,\"div\"],[9],[0,\"\\n            \"],[1,[23,[\"character\",\"mentalAttributesTotal\"]],false],[0,\"\\n        \"],[10],[0,\"\\n    \"],[10],[0,\"\\n\"],[10],[0,\"\\n\"],[7,\"div\"],[11,\"class\",\"character_edit--options\"],[9],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"save\",[23,[\"character\"]]]],[9],[0,\"Save\"],[10],[0,\"\\n    \"],[7,\"button\"],[3,\"action\",[[22,0,[]],\"cancel\",[23,[\"character\"]]]],[9],[0,\"Cancel\"],[10],[0,\"\\n\"],[10],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/characters/characters-edit/template.hbs" } });
+});
+;define('tellersdesk-front/components/fa-icon', ['exports', '@fortawesome/ember-fontawesome/components/fa-icon'], function (exports, _faIcon) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _faIcon.default;
+    }
+  });
+});
+;define('tellersdesk-front/components/level-picker/component', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Component.extend({
+    tagName: 'span',
+
+    /**
+     * Minimum accepted value as level
+     *
+     * @property min
+     * @type {Number}
+     * @public
+     */
+    min: 0,
+
+    /**
+     * Maximum accepted value as level
+     *
+     * @property max
+     * @type {Number}
+     * @public
+     */
+    max: 5,
+
+    /**
+     * Current value for level
+     *
+     * @property currentValue
+     * @type {Number}
+     * @public
+     */
+    currentValue: 0,
+
+    /**
+     * If true, cannot be changed
+     *
+     * @property readOnly
+     * @type {Boolean}
+     * @public
+     */
+    readOnly: false,
+
+    /**
+     * Used to render the maximum number of level affordances
+     *
+     * @property levelsToRender
+     * @type {Number}
+     * @public
+     */
+    levelsToRender: Ember.computed('max', function () {
+      const total = (Math.floor(this.get('max') / 5) + 1) * 5;
+      return Ember.A(new Array(total).fill(0).map((value, index, array) => array[index] = index + 1));
+    }),
+
+    actions: {
+      /**
+       * Changes the current value of the level according to user interaction on the component
+       * @param {Number} newVal
+       * @param selected
+       * @returns {boolean}
+       */
+      updateLevel(newVal, selected) {
+        if (this.get('currentValue') === 1 && selected) {
+          this.set('currentValue', 0);
+        } else {
+          this.set('currentValue', newVal);
+        }
+
+        // Prevent redirecting to the top of the page
+        return false;
+      }
+    }
+  });
+});
+;define('tellersdesk-front/components/level-picker/level-affordance/component', ['exports'], function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = Ember.Component.extend({
+        tagName: ''
+    });
+});
+;define("tellersdesk-front/components/level-picker/level-affordance/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "2U56prwA", "block": "{\"symbols\":[],\"statements\":[[4,\"if\",[[27,\"gte\",[[23,[\"currentValue\"]],[23,[\"level\"]]],null]],null,{\"statements\":[[0,\"    \"],[1,[27,\"fa-icon\",[\"circle\"],[[\"prefix\"],[\"fas\"]]],false],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"    \"],[1,[27,\"fa-icon\",[\"circle\"],[[\"prefix\"],[\"far\"]]],false],[0,\"\\n\"]],\"parameters\":[]}]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/level-picker/level-affordance/template.hbs" } });
+});
+;define("tellersdesk-front/components/level-picker/template", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "xF9C/P57", "block": "{\"symbols\":[\"level\"],\"statements\":[[4,\"each\",[[23,[\"levelsToRender\"]]],null,{\"statements\":[[4,\"if\",[[23,[\"readOnly\"]]],null,{\"statements\":[[0,\"        \"],[1,[27,\"level-picker/level-affordance\",null,[[\"currentValue\",\"level\"],[[23,[\"currentValue\"]],[22,1,[]]]]],false],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"        \"],[7,\"a\"],[11,\"href\",\"#\"],[11,\"style\",\"color: black; text-decoration: none;\"],[12,\"onclick\",[27,\"action\",[[22,0,[]],\"updateLevel\",[22,1,[]],[27,\"gte\",[[23,[\"currentValue\"]],[22,1,[]]],null]],null]],[9],[0,\"\\n            \"],[1,[27,\"level-picker/level-affordance\",null,[[\"currentValue\",\"level\"],[[23,[\"currentValue\"]],[22,1,[]]]]],false],[0,\"\\n        \"],[10],[0,\"\\n\"]],\"parameters\":[]}]],\"parameters\":[1]},null]],\"hasEval\":false}", "meta": { "moduleName": "tellersdesk-front/components/level-picker/template.hbs" } });
 });
 ;define('tellersdesk-front/components/welcome-page', ['exports', 'ember-welcome-page/components/welcome-page'], function (exports, _welcomePage) {
   'use strict';
@@ -363,6 +479,25 @@
 
     });
 });
+;define('tellersdesk-front/helpers/and', ['exports', 'ember-truth-helpers/helpers/and'], function (exports, _and) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _and.default;
+    }
+  });
+  Object.defineProperty(exports, 'and', {
+    enumerable: true,
+    get: function () {
+      return _and.and;
+    }
+  });
+});
 ;define('tellersdesk-front/helpers/app-version', ['exports', 'tellersdesk-front/config/environment', 'ember-cli-app-version/utils/regexp'], function (exports, _environment, _regexp) {
   'use strict';
 
@@ -399,6 +534,209 @@
 
   exports.default = Ember.Helper.helper(appVersion);
 });
+;define('tellersdesk-front/helpers/eq', ['exports', 'ember-truth-helpers/helpers/equal'], function (exports, _equal) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _equal.default;
+    }
+  });
+  Object.defineProperty(exports, 'equal', {
+    enumerable: true,
+    get: function () {
+      return _equal.equal;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/gt', ['exports', 'ember-truth-helpers/helpers/gt'], function (exports, _gt) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gt.default;
+    }
+  });
+  Object.defineProperty(exports, 'gt', {
+    enumerable: true,
+    get: function () {
+      return _gt.gt;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/gte', ['exports', 'ember-truth-helpers/helpers/gte'], function (exports, _gte) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gte.default;
+    }
+  });
+  Object.defineProperty(exports, 'gte', {
+    enumerable: true,
+    get: function () {
+      return _gte.gte;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/is-array', ['exports', 'ember-truth-helpers/helpers/is-array'], function (exports, _isArray) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _isArray.default;
+    }
+  });
+  Object.defineProperty(exports, 'isArray', {
+    enumerable: true,
+    get: function () {
+      return _isArray.isArray;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/is-empty', ['exports', 'ember-truth-helpers/helpers/is-empty'], function (exports, _isEmpty) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _isEmpty.default;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/is-equal', ['exports', 'ember-truth-helpers/helpers/is-equal'], function (exports, _isEqual) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _isEqual.default;
+    }
+  });
+  Object.defineProperty(exports, 'isEqual', {
+    enumerable: true,
+    get: function () {
+      return _isEqual.isEqual;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/lt', ['exports', 'ember-truth-helpers/helpers/lt'], function (exports, _lt) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _lt.default;
+    }
+  });
+  Object.defineProperty(exports, 'lt', {
+    enumerable: true,
+    get: function () {
+      return _lt.lt;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/lte', ['exports', 'ember-truth-helpers/helpers/lte'], function (exports, _lte) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _lte.default;
+    }
+  });
+  Object.defineProperty(exports, 'lte', {
+    enumerable: true,
+    get: function () {
+      return _lte.lte;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/not-eq', ['exports', 'ember-truth-helpers/helpers/not-equal'], function (exports, _notEqual) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _notEqual.default;
+    }
+  });
+  Object.defineProperty(exports, 'notEq', {
+    enumerable: true,
+    get: function () {
+      return _notEqual.notEq;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/not', ['exports', 'ember-truth-helpers/helpers/not'], function (exports, _not) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _not.default;
+    }
+  });
+  Object.defineProperty(exports, 'not', {
+    enumerable: true,
+    get: function () {
+      return _not.not;
+    }
+  });
+});
+;define('tellersdesk-front/helpers/or', ['exports', 'ember-truth-helpers/helpers/or'], function (exports, _or) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _or.default;
+    }
+  });
+  Object.defineProperty(exports, 'or', {
+    enumerable: true,
+    get: function () {
+      return _or.or;
+    }
+  });
+});
 ;define('tellersdesk-front/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _pluralize) {
   'use strict';
 
@@ -414,6 +752,25 @@
     value: true
   });
   exports.default = _singularize.default;
+});
+;define('tellersdesk-front/helpers/xor', ['exports', 'ember-truth-helpers/helpers/xor'], function (exports, _xor) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _xor.default;
+    }
+  });
+  Object.defineProperty(exports, 'xor', {
+    enumerable: true,
+    get: function () {
+      return _xor.xor;
+    }
+  });
 });
 ;define('tellersdesk-front/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'tellersdesk-front/config/environment'], function (exports, _initializerFactory, _environment) {
   'use strict';
@@ -529,6 +886,17 @@
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
+
+
+    const physicalAttributes = ['strength', 'dexterity', 'stamina'];
+    const socialAttributes = ['charisma', 'manipulation', 'appearance'];
+    const mentalAttributes = ['perception', 'intelligence', 'wits'];
+    const attributesSet = ['physicalAttributesTotal', 'socialAttributesTotal', 'mentalAttributesTotal'];
+
+    const sumAttributes = function (attributes) {
+        return attributes.map(attr => parseInt(this.get(attr))).reduce((acc, curr) => acc + curr);
+    };
+
     exports.default = _emberData.default.Model.extend({
         name: _emberData.default.attr('string'),
 
@@ -544,20 +912,24 @@
         intelligence: _emberData.default.attr('number', { defaultValue: 1 }),
         wits: _emberData.default.attr('number', { defaultValue: 1 }),
 
-        physicalAttributesTotal: Ember.computed('strength', 'dexterity', 'stamina', function () {
-            return parseInt(this.get('strength')) + parseInt(this.get('dexterity')) + parseInt(this.get('stamina'));
+        maxAttributeLevel: Ember.computed(...physicalAttributes, ...socialAttributes, ...mentalAttributes, function () {
+            return [...physicalAttributes, ...socialAttributes, ...mentalAttributes].map(attr => parseInt(this.get(attr))).reduce((greatest, curr) => curr > greatest ? curr : greatest);
         }),
 
-        socialAttributesTotal: Ember.computed('charisma', 'manipulation', 'appearance', function () {
-            return parseInt(this.get('charisma')) + parseInt(this.get('manipulation')) + parseInt(this.get('appearance'));
+        physicalAttributesTotal: Ember.computed(...physicalAttributes, function () {
+            return sumAttributes.bind(this)(physicalAttributes);
         }),
 
-        mentalAttributesTotal: Ember.computed('perception', 'intelligence', 'wits', function () {
-            return parseInt(this.get('perception')) + parseInt(this.get('intelligence')) + parseInt(this.get('wits'));
+        socialAttributesTotal: Ember.computed(...socialAttributes, function () {
+            return sumAttributes.bind(this)(socialAttributes);
         }),
 
-        attributesTotal: Ember.computed('physicalAttributesTotal', 'socialAttributesTotal', 'mentalAttributesTotal', function () {
-            return this.get('physicalAttributesTotal') + this.get('socialAttributesTotal') + this.get('mentalAttributesTotal');
+        mentalAttributesTotal: Ember.computed(...mentalAttributes, function () {
+            return sumAttributes.bind(this)(mentalAttributes);
+        }),
+
+        attributesTotal: Ember.computed(...attributesSet, function () {
+            return sumAttributes.bind(this)(attributesSet);
         })
     });
 });
@@ -775,7 +1147,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+c03ecd67"});
+            require("tellersdesk-front/app")["default"].create({"name":"tellersdesk-front","version":"0.0.0+d1bcfcfa"});
           }
         
 //# sourceMappingURL=tellersdesk-front.map
