@@ -1,6 +1,10 @@
-const ObjectIdentified = require('../object-identified-model');
+const Model = require('../base-model');
 
-class Story extends ObjectIdentified {
+/**
+ * @package models/story
+ * @class Story
+ */
+class Story extends Model {
     /**
      * Factory method
      *

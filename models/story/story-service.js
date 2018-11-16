@@ -1,4 +1,5 @@
-const repository = require('./story-repository');
+const Story = require('./story-model');
+const repository = require('../base-repository').newInstance(Story, 'stories');
 
 module.exports = {
     /**

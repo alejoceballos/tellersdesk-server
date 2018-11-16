@@ -1,4 +1,5 @@
-const repository = require('./character-repository');
+const Character = require('./character-model');
+const repository = require('../base-repository').newInstance(Character, 'characters');
 
 module.exports = {
     /**
