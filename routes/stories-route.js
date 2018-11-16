@@ -3,10 +3,10 @@ const router = require('express').Router();
 const HttpStatus = require('http-status-codes');
 const JSONAPIError = require('jsonapi-serializer').Error;
 
-// Character structures dependencies
-const service = require('../models/character/character-service');
-const Character = require('../models/character/character-model');
-const { serializer, deserializer } = require('../models/character/character-serializer');
+// Story structures dependencies
+const service = require('../models/story/story-service');
+const Character = require('../models/story/story-model');
+const { serializer, deserializer } = require('../models/story/story-serializer');
 
 // Generic functions declaration
 const deserialize = data => deserializer.deserialize(data);
@@ -18,9 +18,9 @@ const create = instance => service.create(instance);
 const update = instance => service.update(instance);
 const remove = id => service.remove(id);
 const serialize = data => serializer.serialize(data);
-const creationError = detail => newError('001', 'Could not add character', detail);
-const updateError = detail => newError('002', 'Could not update character', detail);
-const deleteError = detail => newError('003', 'Could not delete character', detail);
+const creationError = detail => newError('004', 'Could not add story', detail);
+const updateError = detail => newError('005', 'Could not update story', detail);
+const deleteError = detail => newError('006', 'Could not delete story', detail);
 
 /**
  * References:
@@ -47,7 +47,7 @@ const persist = (req, res, persist, successStatus, retrieveError) => {
 };
 
 /**
- * GET characters listing
+ * GET stories listing
  */
 router.get('/', async function (req, res /*, next*/) {
     const instances = await service.findAll();
@@ -57,7 +57,7 @@ router.get('/', async function (req, res /*, next*/) {
 });
 
 /**
- * GET character
+ * GET story
  */
 router.get('/:id', async function (req, res /*, next*/) {
     const instance = await service.findById(req.params.id);
@@ -67,21 +67,21 @@ router.get('/:id', async function (req, res /*, next*/) {
 });
 
 /**
- * POST new character
+ * POST new story
  */
 router.post('/', function (req, res) {
     persist(req, res, instance => create(instance), HttpStatus.CREATED, err => creationError(err.message));
 });
 
 /**
- * PATCH existing character
+ * PATCH existing story
  */
 router.patch('/:id', function(req, res) {
     persist(req, res, instance => update(instance), HttpStatus.OK, err => updateError(err.message));
 });
 
 /**
- * DELETE existing character
+ * DELETE existing story
  */
 router.delete('/:id', async function(req, res) {
     try {

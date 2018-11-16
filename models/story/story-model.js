@@ -1,15 +1,15 @@
 const ObjectIdentified = require('../object-identified-model');
 
-class Character extends ObjectIdentified {
+class Story extends ObjectIdentified {
     /**
      * Factory method
      *
      * @param {Object} values
-     * @returns {Character}
+     * @returns {Story}
      */
     static newInstance(values) {
-        return new Character(values);
+        return new Story(values);
     }
 }
 
-module.exports = Character;
+module.exports = Story;

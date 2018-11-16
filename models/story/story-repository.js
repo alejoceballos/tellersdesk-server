@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
 
-const Character = require('./character-model');
+const Story = require('./story-model');
 
 const dbInfra = {
     async getInfra() {
@@ -11,20 +11,20 @@ const dbInfra = {
 
         return {
             client: mongoClient,
-            collection: db.collection('characters')
+            collection: db.collection('stories')
         };
     }
 };
 
 module.exports = {
     /**
-     * @returns {Promise<Character[]>}
+     * @returns {Promise<Story[]>}
      */
     async findAll() {
         const {client, collection} = await dbInfra.getInfra();
         const cursor = collection.find({});
         const docs = await cursor.toArray();
-        const entities = docs.map(doc => new Character(doc));
+        const entities = docs.map(doc => new Story(doc));
         client.close();
 
         return entities;
@@ -33,24 +33,24 @@ module.exports = {
     /**
      *
      * @param {string} id
-     * @returns {Promise<Character>}
+     * @returns {Promise<Story>}
      */
     async findById(id) {
         const {client, collection} = await dbInfra.getInfra();
         const doc = await collection.findOne({_id: ObjectID(id)});
-        const entity = new Character(doc);
+        const entity = new Story(doc);
         client.close();
 
         return entity;
     },
 
     /**
-     * @param {Character} instance
-     * @returns {Promise<Character>}
+     * @param {Story} instance
+     * @returns {Promise<Story>}
      */
     async persist(instance) {
         if (!instance) throw new Error('No instance to persist');
-        if (!(instance instanceof Character)) throw new Error('Wrong type of model to persist');
+        if (!(instance instanceof Story)) throw new Error('Wrong type of model to persist');
 
         const {client, collection} = await dbInfra.getInfra();
 

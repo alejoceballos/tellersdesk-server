@@ -8,6 +8,7 @@ const HttpStatus = require('http-status-codes');
 const indexRouter = require('./routes/index-route');
 const usersRouter = require('./routes/users-route');
 const charactersRouter = require('./routes/characters-route');
+const storiesRouter = require('./routes/stories-route');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/users', usersRouter);
 app.use('/api/characters', charactersRouter);
+app.use('/api/stories', storiesRouter);
 app.use('*', indexRouter);
 
 // catch 404 and forward to error handler
