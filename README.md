@@ -13,13 +13,29 @@ The main idea is to allow a storyteller and its fellow players to manage story t
 #### Example:
 ```
 .
-├── Story
-│   └── Character
-│       ├── Attribute
-│       ├── Skill
-.       .
-.       .
-.       .
+├── Unsecured Area
+│   └── Login
+├── Secured Area
+│   ├── Dashboard 
+│   │   ├── Stories
+│   │   │   └── My Stories (as a Player and a Storyteller)
+│   │   ├── Characters
+│   │   │   ├── My Characters (as a Player)
+│   │   │   └── My Non Playable Characters (as a Storyteller)
+│   │   └── Last Actions 
+│   │       ├── My Last Actions (as a Storyteller and a Player)
+│   │       └── Last each action by Story and Player (as an Admin)
+│   ├── Stories
+│   │   ├── My Stories (as a Player)
+│   │   ├── My Stories (as a Storyteller)
+│   │   └── All Other Stories (as an Admin)
+│   ├── Characters
+│   │   ├── My Characters (as a Player)
+│   │   ├── My Non Playable Characters (as a Storyteller)
+│   │   └── All Other Characters (as an Admin)
+.   .   
+.   .
+.   .
 ```
 
 #### System milestones are:
